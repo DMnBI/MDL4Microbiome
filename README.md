@@ -9,9 +9,9 @@ A multimodal deep learning model aims for combining features from different moda
 
 Pre-installed python packages for MDL4Microbiome
 ------------------
-MDL4Microbiome needs following packages to be installed. 
+MDL4Microbiome is implemented on Python version 3.6.9.
 
-The written versions are recommended; more recent versions are likely to work just fine. 
+Following packages needs to be installed. The written versions are recommended; more recent versions are likely to work just fine. 
 
 - numpy (version 1.16.6, https://numpy.org/install/)
 - pandas (version 1.1.5, https://pandas.pydata.org/getting_started.html)

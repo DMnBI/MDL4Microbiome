@@ -11,13 +11,12 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 import sklearn
 
-print(np.__version__)
-print(pd.__version__)
-print(keras.__version__)
-print(sklearn.__version__)
-print(csv.__version__)
-print(argparse.__version__)
-exit()
+#print(np.__version__)
+#print(pd.__version__)
+#print(keras.__version__)
+#print(sklearn.__version__)
+#print(csv.__version__)
+#print(argparse.__version__)
 
 def make_model(input_size, ty):
 
@@ -274,6 +273,10 @@ if __name__ == "__main__":
                         required=True,
                         metavar='\b',
                         help="A name of a file for summarised results")
+    parser.add_argument("-i", "--individuals",
+                        dest="indi",
+                        action="store_true",
+                        help="A flag for \"individuals only\". Use when you want to see the classification results of individual features only.")
     parser.add_argument("-h", "--help", 
                         action="help",
                         help="show this help message and exit")
@@ -286,5 +289,6 @@ if __name__ == "__main__":
 
     logger = open(args.logger,"w")
     individuals, iter_num = run_individuals(datasets, ylab, args.tmp, int(args.epoch1), logger)
-    run_shared(individuals, ylab, iter_num, int(args.epoch2), logger)
+    if not args.indi:
+        run_shared(individuals, ylab, iter_num, int(args.epoch2), logger)
     logger.close()

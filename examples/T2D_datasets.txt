@@ -1,0 +1,3 @@
+examples/T2D/T2D_genomic40.csv
+examples/T2D/T2D_taxonomic_species.csv
+examples/T2D/T2D_functional.csv

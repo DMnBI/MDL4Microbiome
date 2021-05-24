@@ -31,7 +31,7 @@ In the directory named `examples`, there are three sub-directories containing ex
 - Files that ends with `_ylab.txt` is a class label file for corresponding datasets. 
 
 ##### COMMAND LINE: 
-> ##### ./MDL4Microbiome.py -m examples/LC/LC_datasets.txt -y examples/LC/LC_ylabel.txt -t tmp/ -e1 30 -e2 10 -l examples/LC_summarise
+> ##### ./MDL4Microbiome.py -m examples/LC/LC_datasets.txt -y examples/LC/LC_ylabel.txt -t tmp/ -e1 30 -e2 10 -l examples/results/LC_summarise
 
 argument options (all required):
 - `-m, --modality`: A file containing dataset file names (absolute path or relative path from current directory). One file per line.

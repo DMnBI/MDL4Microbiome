@@ -104,7 +104,7 @@ def train_individuals(df, y, key, epoch, tmp, logger):
 
         keras.backend.clear_session()
 
-    logger.write(" accuracy: \t"+str(cnt/df.shape[0])+"\n")
+    logger.write(" accuracy: \t"+"{:.2f}".format(round(cnt/df.shape[0], 2))+"\n")
     logger.write("\t".join(["TP","FN","FP","TN"])+"\n")
     logger.write("\t".join([str(TP),str(FN),str(FP),str(TN)])+"\n\n")
 
@@ -223,7 +223,7 @@ def run_shared(individuals, y, iter_num, epoch, logger):
             exit()
         keras.backend.clear_session()
 
-    logger.write(" accuracy: " + str(cnt/iter_num)+'\n')
+    logger.write(" accuracy: " + "{:.2f}".format(round(cnt/iter_num, 2))+'\n')
     logger.write("\t".join(["TP","FN","FP","TN"])+"\n")
     logger.write("\t".join([str(TP),str(FN),str(FP),str(TN)])+"\n")
 
@@ -234,7 +234,7 @@ if __name__ == "__main__":
     multi-modal deep learning model (aiming for microbiome samples)
     see README.md file for specific instructions.
     >> example commandline
-    >> ./MDL4Microbiome.py -m examples/LC_list.txt -y examples/LC_ylabel.txt -t tmp/ -e1 30 -e2 10""",
+    >> ./MDL4Microbiome.py -m examples/T2D/T2D_datasets.txt -y examples/T2D/T2D_ylab.txt -t examples/T2D -e1 30 -e2 10 -l examples/results/T2D_summarise """,
     formatter_class = argparse.RawTextHelpFormatter, add_help=False)
 
     parser.add_argument("-m", "--modality",
